@@ -1,9 +1,9 @@
 import pymongo
+
 client = pymongo.MongoClient("localhost", 27017)
 
-mydb = client["test"]
-mycol = mydb["muzo"]
+mycol = client["test"]["muzo"]
 
-x = mycol.delete_one({ "name" : "valentina" })
+x = mycol.delete_one({ "name" : "muzo" })
 
 print(x.deleted_count)
