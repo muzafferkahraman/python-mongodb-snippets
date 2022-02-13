@@ -1,0 +1,34 @@
+Create a database called "mydatabase":
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+
+mydb = myclient["mydatabase"]
+
+
+Check if Database Exists
+
+print(myclient.list_database_names())
+
+Create a collection called "customers":
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+
+mycol = mydb["customers"]
+
+Delete the "customers" collection:
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+mycol.drop() 
+
+
+Delete the database:
+
+myclient.drop_database('organisation')
+
